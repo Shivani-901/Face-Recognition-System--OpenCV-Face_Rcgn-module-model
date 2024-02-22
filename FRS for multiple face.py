@@ -11,14 +11,14 @@ known_face_encodings = []
 known_face_names = []
 
 # Load images for Angelina
-for img_path in os.listdir(angelina_dir):
+for img_path in os.listdir(Angelina_dir):
     img = face_recognition.load_image_file(os.path.join(angelina_dir, img_path))
     face_encoding = face_recognition.face_encodings(img)[0]  # Assume only one face per image
     known_face_encodings.append(face_encoding)
     known_face_names.append('Angelina')
 
 # Load images for Tom Cruise
-for img_path in os.listdir(tomcruise_dir):
+for img_path in os.listdir(Tom_dir):
     img = face_recognition.load_image_file(os.path.join(tomcruise_dir, img_path))
     face_encoding = face_recognition.face_encodings(img)[0]  # Assume only one face per image
     known_face_encodings.append(face_encoding)
@@ -26,7 +26,7 @@ for img_path in os.listdir(tomcruise_dir):
 
 
 # Initialize webcam
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while True:
     # Capture frame-by-frame
