@@ -3,8 +3,7 @@ import cv2
 import face_recognition
 
 # Define the paths to the directories containing images for each person
-person1_dir = '/Users/rockxy/Desktop/img_file/Veena/'
-person2_dir = 'Users/rockxy/Desktop/img_file/Anjelina/'
+person1_dir = '/Users/rockxy/Desktop/img_file/Tom/'
 
 # Load images and extract face encodings
 known_face_encodings = []
@@ -15,14 +14,7 @@ for img_path in os.listdir(Veena_dir):
     img = face_recognition.load_image_file(os.path.join(person1_dir, img_path))
     face_encoding = face_recognition.face_encodings(img)[0]  # Assume only one face per image
     known_face_encodings.append(face_encoding)
-    known_face_names.append('Veena')  # Add the label for person 1
-
-for img_path in os.listdir(angelina_dir):
-    img = face_recognition.load_image_file(os.path.join(angelina_dir, img_path))
-    face_encoding = face_recognition.face_encodings(img)[0]  # Assume only one face per image
-    known_face_encodings.append(face_encoding)
-    known_face_names.append('Angelina')
-
+    known_face_names.append('Tom')  # Add the label for person 1
 
 # Load your pre-trained face recognition model
 # Populate known_face_encodings and known_face_names with your trained data
