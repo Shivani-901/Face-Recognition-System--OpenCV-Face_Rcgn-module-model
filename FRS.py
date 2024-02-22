@@ -10,7 +10,7 @@ known_face_encodings = []
 known_face_names = []
 
 # Load images for person 1
-for img_path in os.listdir(Veena_dir):
+for img_path in os.listdir(Tom_dir):
     img = face_recognition.load_image_file(os.path.join(person1_dir, img_path))
     face_encoding = face_recognition.face_encodings(img)[0]  # Assume only one face per image
     known_face_encodings.append(face_encoding)
